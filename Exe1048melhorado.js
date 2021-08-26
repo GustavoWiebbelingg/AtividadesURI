@@ -25,5 +25,5 @@ let calcPorcent = (parseFloat(input) / 100) * porcentagem
 
 console.log(`Novo salario: ${(parseFloat(input) + calcPorcent).toFixed(2)}`)
 console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
-console.log(`Em percentual.atualizado: ${porcentagem} %`)
+console.log(`Em percentual: ${porcentagem} %`)
     
