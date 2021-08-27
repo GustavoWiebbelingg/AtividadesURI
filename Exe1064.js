@@ -22,7 +22,5 @@ while (y < 6) {
     y++
 }
 
-
-
 console.log(`${somaPositivos} valores positivos`)
 console.log((somaValores / count).toFixed(1))
