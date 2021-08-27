@@ -1,36 +1,29 @@
 var input = require('fs').readFileSync('./Estudos.URI/dev/stdin/test.txt', 'utf8');
 
-let valor = parseFloat(input)
+function calculoPorcentagem(valor) {
+    let salario = valor
+    let porcent = 0
 
-if (valor > 0 && valor <= 400.00) {
-    let calcPorcent = (valor / 100) * 15 
+    if (salario > 0 && salario <= 400) {
+        porcent = 15
+    } else if (salario > 400 && salario <= 800){
+        porcent = 12
+    } else if (salario > 800 && salario <= 1200) {
+        porcent = 10
+    } else if (salario > 1200 && salario <= 2000) {
+        porcent = 7
+    } else {
+        porcent = 4
+    }
 
-    console.log(`Novo salario: ${(valor + calcPorcent).toFixed(2)}`)
-    console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
-    console.log('Em percentual: 15 %')
-
-} else if (valor > 400.00 && valor <= 800.00) {
-    let calcPorcent = (valor / 100) * 12 
-
-    console.log(`Novo salario: ${(valor + calcPorcent).toFixed(2)}`)
-    console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
-    console.log('Em percentual: 12 %')
-} else if (valor > 800.00 && valor <= 1200.00) {
-    let calcPorcent = (valor / 100) * 10
-
-    console.log(`Novo salario: ${(valor + calcPorcent).toFixed(2)}`)
-    console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
-    console.log('Em percentual: 10 %')
-} else if (valor > 1200.00 && valor <= 2000.00) {
-    let calcPorcent = (valor / 100) * 7
-
-    console.log(`Novo salario: ${(valor + calcPorcent).toFixed(2)}`)
-    console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
-    console.log('Em percentual: 7 %')
-} else {
-    let calcPorcent = (valor / 100) * 4
-
-    console.log(`Novo salario: ${(valor + calcPorcent).toFixed(2)}`)
-    console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
-    console.log('Em percentual: 4 %')
+    return (porcent)
 }
+
+let porcentagem = calculoPorcentagem(input)
+
+let calcPorcent = (parseFloat(input) / 100) * porcentagem
+
+console.log(`Novo salario: ${(parseFloat(input) + calcPorcent).toFixed(2)}`)
+console.log(`Reajuste ganho: ${calcPorcent.toFixed(2)}`)
+console.log(`Em percentual: ${porcentagem} %`)
+    
