@@ -29,4 +29,4 @@ while (count < 5) {
 console.log(`${qtdPar} valor(es) par(es)`)
 console.log(`${qtdImpar} valor(es) impar(es)`)
 console.log(`${qtdPositivo} valor(es) positivo(s)`)
-console.log(`${qtdNegativo} valor(es) negativo(es)`)
+console.log(`${qtdNegativo} valor(es) negativo(s)`)
